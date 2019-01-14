@@ -4,7 +4,7 @@ import './PostHeader.css';
 const PostHeader = props => {
   return (
     <div className="post-header">
-      <h4>Post Header</h4>
+      <h4>{props.username}</h4>
     </div>
   );
 };

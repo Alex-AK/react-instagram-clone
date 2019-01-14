@@ -13,16 +13,19 @@ class App extends Component {
     };
   }
   render() {
+    console.log(this.state.data);
     return (
       <div className="App">
         <NavigationContainer />
         <div className="main-container">
-          <MainContent />
+          <MainContent data={this.state.data} />
           <SideBar />
         </div>
       </div>
     );
   }
 }
+
+// add type check here for data (array of objects) going into main content
 
 export default App;
