@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import dummyData from './dummy-data';
 import './App.css';
+import NavigationContainer from './components/NavContainer/NavigationContainer';
+import MainContent from './components/MainContent/MainContent';
+import SideBar from './components/MainContent/SideBar';
 
 class App extends Component {
   constructor() {
@@ -12,9 +15,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>{this.state.data[0].username}</h1>
-        </header>
+        <NavigationContainer />
+        <div className="main-container">
+          <MainContent />
+          <SideBar />
+        </div>
       </div>
     );
   }
