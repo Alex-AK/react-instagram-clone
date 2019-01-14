@@ -2,11 +2,7 @@ import React from 'react';
 import './PostImage.css';
 
 const PostImage = props => {
-  return (
-    <div className="post-image">
-      <h4>Post Image</h4>
-    </div>
-  );
+  return <img className="post-image" src={props.image} />;
 };
 
 export default PostImage;

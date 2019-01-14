@@ -5,12 +5,19 @@ import PostImage from './PostImage';
 import CommentContainer from '../../CommentSection/CommentContainer';
 
 const PostContainer = props => {
-  const { username, thumbnail, image, likes, timestamp, comments } = props.data;
+  const {
+    username,
+    thumbnailUrl,
+    imageUrl,
+    likes,
+    timestamp,
+    comments
+  } = props.data;
 
   return (
     <div className="post-container">
-      <PostHeader username={username} thumbnail={thumbnail} />
-      <PostImage image={image} />
+      <PostHeader username={username} thumbnail={thumbnailUrl} />
+      <PostImage image={imageUrl} />
       <CommentContainer
         likes={likes}
         timestamp={timestamp}

@@ -5,25 +5,21 @@ import MetricsDisplay from './MetricsDisplay';
 import AddComment from './AddComment';
 
 const CommentContainer = props => {
-  console.log(props.comments[1].username);
-
-  const commentData = props.comments.map(item => {
+  const createCommentComponents = props.comments.map((item, index) => {
     return (
-      <Comments
-        username={item.username}
-        key={item.username}
-        comment={item.text}
-      />
+      <Comments username={item.username} key={index} comment={item.text} />
     );
   });
 
   return (
     <div className="comment-container">
       <MetricsDisplay />
-      {commentData}
+      {createCommentComponents}
       <AddComment />
     </div>
   );
 };
+
+// add type check here for data (username: string, comment: string) going into
 
 export default CommentContainer;
