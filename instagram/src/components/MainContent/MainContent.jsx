@@ -1,10 +1,11 @@
 import React from 'react';
 import './MainContent.css';
+import PostContainer from './PostContainer/PostContainer';
 
 const MainContent = props => {
   return (
     <div className="main-content">
-      <h1>Main Container</h1>
+      <PostContainer />
     </div>
   );
 };
