@@ -15,12 +15,12 @@ import AddComment from './AddComment';
 class CommentContainer extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props.likes);
     this.state = {
       comments: [],
       likes: 0,
       timestamp: '',
-      value: ''
+      name: 'currentComment',
+      currentComment: ''
     };
   }
 
@@ -32,9 +32,20 @@ class CommentContainer extends Component {
     });
   }
 
+  handleChange = e => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
   handleSubmit = e => {
     e.preventDefault();
-    this.setState();
+    const newComments = [
+      ...this.state.comments,
+      { username: 'test user', text: this.state.currentComment }
+    ];
+    this.setState({ comments: newComments, currentComment: '' });
   };
 
   render() {
@@ -52,7 +63,11 @@ class CommentContainer extends Component {
       <div className="comment-container">
         <MetricsDisplay likes={this.state.likes} />
         {createCommentComponents}
-        <AddComment value={this.state.value} handleSubmit={this.handleSubmit} />
+        <AddComment
+          currentComment={this.state.currentComment}
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+        />
       </div>
     );
   }

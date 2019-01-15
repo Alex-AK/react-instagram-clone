@@ -4,8 +4,14 @@ import './AddComment.css';
 const AddComment = props => {
   return (
     <div className="add-comment-container">
-      <form>
-        <input className="add-comment" placeholder="Add a comment..." />
+      <form onSubmit={props.handleSubmit}>
+        <input
+          className="add-comment"
+          name="currentComment"
+          placeholder="Add comment..."
+          value={props.currentComment}
+          onChange={props.handleChange}
+        />
       </form>
     </div>
   );
