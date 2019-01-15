@@ -20,6 +20,7 @@ const PostContainer = props => {
       <PostHeader username={username} thumbnail={thumbnailUrl} />
       <PostImage image={imageUrl} />
       <CommentContainer
+        // converting this to a class component, which will receive it's own state
         likes={likes}
         timestamp={timestamp}
         comments={comments}

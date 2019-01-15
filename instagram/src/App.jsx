@@ -7,7 +7,6 @@ import MainContent from './components/MainContent/MainContent';
 
 class App extends Component {
   constructor() {
-    console.log('constructor ran');
     super();
     this.state = {
       data: []
@@ -23,7 +22,10 @@ class App extends Component {
       <div className="App">
         <NavigationContainer />
         <div className="main-container">
-          <MainContent data={this.state.data} />
+          <MainContent
+            data={this.state.data}
+            handleChange={this.handleChange}
+          />
           {/* <SideBar /> */}
         </div>
       </div>
