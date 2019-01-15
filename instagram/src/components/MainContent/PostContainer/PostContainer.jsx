@@ -24,6 +24,7 @@ const PostContainer = props => {
         likes={likes}
         timestamp={timestamp}
         comments={comments}
+        username={username}
       />
     </div>
   );

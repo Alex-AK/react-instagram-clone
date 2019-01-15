@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import dummyData from '../../dummy-data';
-
 import './CommentContainer.css';
 import Comments from './Comments';
 import MetricsDisplay from './MetricsDisplay';
@@ -18,6 +16,7 @@ class CommentContainer extends Component {
     this.state = {
       comments: [],
       likes: 0,
+      likeActive: false,
       timestamp: '',
       name: 'currentComment',
       currentComment: ''
@@ -32,6 +31,22 @@ class CommentContainer extends Component {
     });
   }
 
+  incrementLike = () => {
+    let likes = this.state.likes + 1;
+    this.setState({
+      likes,
+      likeActive: true
+    });
+  };
+
+  decrementLike = () => {
+    let likes = this.state.likes - 1;
+    this.setState({
+      likes,
+      likeActive: false
+    });
+  };
+
   handleChange = e => {
     const { name, value } = e.target;
     this.setState({
@@ -43,7 +58,7 @@ class CommentContainer extends Component {
     e.preventDefault();
     const newComments = [
       ...this.state.comments,
-      { username: 'test user', text: this.state.currentComment }
+      { username: 'test', text: this.state.currentComment }
     ];
     this.setState({ comments: newComments, currentComment: '' });
   };
@@ -51,17 +66,18 @@ class CommentContainer extends Component {
   render() {
     const createCommentComponents = this.state.comments.map((item, index) => {
       return (
-        <Comments
-          commentUsername={item.username}
-          comment={item.text}
-          key={index}
-        />
+        <Comments username={item.username} comment={item.text} key={index} />
       );
     });
 
     return (
       <div className="comment-container">
-        <MetricsDisplay likes={this.state.likes} />
+        <MetricsDisplay
+          likes={this.state.likes}
+          increment={this.incrementLike}
+          decrement={this.decrementLike}
+          likeActive={this.state.likeActive}
+        />
         {createCommentComponents}
         <AddComment
           currentComment={this.state.currentComment}

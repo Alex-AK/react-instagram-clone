@@ -7,10 +7,10 @@ const AddComment = props => {
       <form onSubmit={props.handleSubmit}>
         <input
           className="add-comment"
-          name="currentComment"
           placeholder="Add comment..."
           value={props.currentComment}
           onChange={props.handleChange}
+          name="currentComment"
         />
       </form>
     </div>
