@@ -4,7 +4,7 @@ import './MetricsDisplay.css';
 const MetricsDisplay = props => {
   return (
     <div className="metrics-display">
-      <h4>Metrics</h4>
+      <p>{props.likes}</p>
     </div>
   );
 };

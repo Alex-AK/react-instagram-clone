@@ -13,7 +13,7 @@ const CommentContainer = props => {
 
   return (
     <div className="comment-container">
-      <MetricsDisplay />
+      <MetricsDisplay likes={props.likes} />
       {createCommentComponents}
       <AddComment />
     </div>

@@ -1,0 +1,11 @@
+.post-header {
+  display: flex;
+  align-items: center;
+}
+
+.thumbnail {
+  width: 38px;
+  height: 38px;
+  margin: 15px;
+  border-radius: 50%;
+}
