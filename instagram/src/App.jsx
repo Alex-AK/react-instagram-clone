@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import dummyData from './dummy-data';
 import './App.css';
 import NavigationContainer from './components/NavContainer/NavigationContainer';
@@ -8,11 +7,17 @@ import MainContent from './components/MainContent/MainContent';
 
 class App extends Component {
   constructor() {
+    console.log('constructor ran');
     super();
     this.state = {
-      data: dummyData
+      data: []
     };
   }
+
+  componentDidMount = () => {
+    this.setState({ data: dummyData });
+  };
+
   render() {
     return (
       <div className="App">
