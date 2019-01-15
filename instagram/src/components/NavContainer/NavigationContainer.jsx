@@ -1,10 +1,15 @@
 import React from 'react';
 import './NavigationContainer.css';
+import Logo from './Logo';
+import SearchBar from './SearchBar';
+import NavButtons from './NavButtons';
 
 const NavigationContainer = props => {
   return (
     <div className="navigation-container">
-      <h1>Nav Container</h1>
+      <Logo />
+      <SearchBar />
+      <NavButtons />
     </div>
   );
 };

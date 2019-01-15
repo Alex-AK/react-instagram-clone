@@ -10,7 +10,7 @@ const MainContent = props => {
     return <PostContainer data={item} key={item.username} />;
   });
   // console.log(props.data[1].username);
-  return <div className="main-content">{post}</div>;
+  return <div>{post}</div>;
 };
 
 MainContent.propTypes = {
