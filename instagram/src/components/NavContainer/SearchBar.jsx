@@ -3,8 +3,8 @@ import './SearchBar.css';
 
 const SearchBar = () => {
   return (
-    <form className="searchBar">
-      <input type="text" placeholder="search" />
+    <form>
+      <input className="search-bar" type="text" placeholder={'search'} />
     </form>
   );
 };
