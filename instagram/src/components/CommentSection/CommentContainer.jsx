@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './CommentContainer.css';
 import Comments from './Comments';
 import MetricsDisplay from './MetricsDisplay';
@@ -20,6 +21,10 @@ const CommentContainer = props => {
   );
 };
 
-// add type check here for data (username: string, comment: string) going into
+CommentContainer.propTypes = {
+  likes: PropTypes.number,
+  comments: PropTypes.array,
+  timestamp: PropTypes.string
+};
 
 export default CommentContainer;

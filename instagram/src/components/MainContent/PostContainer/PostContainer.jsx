@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './PostContainer.css';
 import PostHeader from './PostHeader';
 import PostImage from './PostImage';
@@ -27,8 +28,15 @@ const PostContainer = props => {
   );
 };
 
-// add type check here for data (thumbnail url: string, username: string) going into PostHeader
-// add type check here for data (imgUrl: string) going into PostImage
-// add type check here for data (comments: array, likes: number, timestamp: string) going into CommentContainer
+PostContainer.propTypes = {
+  data: PropTypes.shape({
+    username: PropTypes.string,
+    thumbnailUrl: PropTypes.string,
+    imageUrl: PropTypes.string,
+    likes: PropTypes.number,
+    comments: PropTypes.array,
+    timestanp: PropTypes.string
+  })
+};
 
 export default PostContainer;

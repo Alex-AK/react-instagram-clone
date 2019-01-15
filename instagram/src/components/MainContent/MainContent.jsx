@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './MainContent.css';
 import PostContainer from './PostContainer/PostContainer';
 
@@ -12,6 +13,8 @@ const MainContent = props => {
   return <div className="main-content">{post}</div>;
 };
 
-// add type check here for data (data: object) going into PostContainer
+MainContent.propTypes = {
+  data: PropTypes.array.isRequired
+};
 
 export default MainContent;
