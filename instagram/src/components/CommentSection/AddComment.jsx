@@ -3,8 +3,10 @@ import './AddComment.css';
 
 const AddComment = props => {
   return (
-    <div className="add-comment">
-      <h4>Add Comment</h4>
+    <div className="add-comment-container">
+      <form>
+        <input className="add-comment" placeholder="Add a comment..." />
+      </form>
     </div>
   );
 };

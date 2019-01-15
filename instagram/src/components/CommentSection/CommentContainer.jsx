@@ -5,6 +5,10 @@ import Comments from './Comments';
 import MetricsDisplay from './MetricsDisplay';
 import AddComment from './AddComment';
 
+// convert this to a class, store comments in state
+// add methods to handleChange (ie add text in value to state)
+// add method to handle submit (ie add value (comment) and logged in username to array of comments)
+
 const CommentContainer = props => {
   const createCommentComponents = props.comments.map((item, index) => {
     return (
