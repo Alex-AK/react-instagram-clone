@@ -7,7 +7,9 @@ const Login = props => {
       <div className="login-menu">
         <input className="login-input" type="text" placeholder="username" />
         <input className="login-input" type="text" placeholder="password" />
-        <button className="login-button">Login</button>
+        <button className="login-button" onClick={props.handleLogin}>
+          Login
+        </button>
       </div>
     </div>
   );

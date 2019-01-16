@@ -8,19 +8,19 @@ const authenticate = App => Login =>
     constructor(props) {
       super(props);
       this.state = {
-        loggedIn: true
+        loggedIn: false
       };
     }
 
-    handleLogin = e => {};
+    handleLogin = () => {
+      this.setState({ loggedIn: true });
+    };
 
     render() {
-      console.log(this.state.loggedIn);
-
       if (this.state.loggedIn) {
-        return <App />;
+        return <App handleLogin={this.handleLogin} />;
       } else {
-        return <Login />;
+        return <Login handleLogin={this.handleLogin} />;
       }
     }
   };
@@ -29,5 +29,3 @@ const authenticate = App => Login =>
 // To be added: functionality to App
 
 export default authenticate;
-
-// {props.isLoggedIn ? App : Login}

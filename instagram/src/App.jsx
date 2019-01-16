@@ -59,10 +59,6 @@ class App extends Component {
     }
   };
 
-  handleLogin = () => {
-    // logic here
-  };
-
   render() {
     // conditional rendering HERE
 
