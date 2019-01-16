@@ -1,8 +1,8 @@
 import React from 'react';
 import './Logo.css';
 
-import logoIcon from './../../assets/ig-logo.svg';
-import logoText from './../../assets/instagram-text-logo.png';
+import logoIcon from '../../../assets/ig-logo.svg';
+import logoText from '../../../assets/instagram-text-logo.png';
 
 const Logo = () => {
   return (

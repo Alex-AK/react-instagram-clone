@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './PostContainer.css';
 import PostHeader from './PostHeader';
 import PostImage from './PostImage';
-import CommentContainer from '../../CommentSection/CommentContainer';
+import CommentContainer from './CommentSection/CommentContainer';
 
 const PostContainer = props => {
   const {

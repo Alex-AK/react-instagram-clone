@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import dummyData from './dummy-data';
 import './App.css';
-import NavigationContainer from './components/NavContainer/NavigationContainer';
-import MainContent from './components/MainContent/MainContent';
-// import SideBar from './components/MainContent/SideBar';
+import LoggedInComponents from './components/LoggedInComponents/LoggedInComponents';
 
 class App extends Component {
   constructor() {
@@ -60,20 +58,15 @@ class App extends Component {
   render() {
     // conditional rendering HERE
     return (
+      // this needs to hold conditional rendering component ran through HOC
+      // pass LoggedInComponent props
       <div className="App">
-        <NavigationContainer
-          handleSearch={this.handleSearch}
+        <LoggedInComponents
           handleChange={this.handleChange}
+          handleSearch={this.handleSearch}
           preventDefault={this.preventDefault}
+          data={this.state.searchData}
         />
-        <div className="main-container">
-          <MainContent
-            data={this.state.searchData}
-            // filtered={filtered}
-            handleChange={this.handleChange}
-          />
-          {/* <SideBar /> */}
-        </div>
       </div>
     );
   }

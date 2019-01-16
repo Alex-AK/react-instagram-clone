@@ -1,7 +1,7 @@
 import React from 'react';
 import './NavButtons.css';
 
-import navButtons from './../../assets/ig-nav-buttons.png';
+import navButtons from '../../../assets/ig-nav-buttons.png';
 
 const NavButtons = () => {
   return (
