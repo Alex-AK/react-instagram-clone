@@ -33,25 +33,27 @@ class App extends Component {
 
   // returns exact match only
   // if exact match does not exist, returns full dataset
+  // alternate approach with this guide - https://dev.to/iam_timsmith/lets-build-a-search-bar-in-react-120j
+
   handleSearch = e => {
     e.preventDefault();
-    const username = this.state.data
-      .filter(data => data.username === this.state.searchInput)
+    const input = this.state.searchInput;
+    const originalData = this.state.data;
+    const username = originalData
+      .filter(data => data.username === input)
       .map(array => array.username)
       .toString();
-    if (this.state.searchInput === '') {
-      this.setState({ searchData: this.state.data });
-    } else if (username === this.state.searchInput) {
+
+    // set state based on input
+    // this component always renders searchData
+    if (input === '') {
+      this.setState({ searchData: originalData });
+    } else if (username === input) {
       this.setState({
-        searchData: this.state.data.filter(
-          data => data.username === this.state.searchInput
-        )
+        searchData: originalData.filter(data => data.username === input)
       });
-    } else if (
-      username !== this.state.searchInput ||
-      this.state.searchInput === `' '`
-    ) {
-      this.setState({ searchData: this.state.data });
+    } else if (username !== input || input === `''`) {
+      this.setState({ searchData: originalData });
     }
   };
 
