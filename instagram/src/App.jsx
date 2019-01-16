@@ -10,45 +10,63 @@ class App extends Component {
     super();
     this.state = {
       data: [],
-      mutedData: [],
+      searchData: [],
       searchInput: '',
       name: 'searchInput'
     };
   }
 
   componentDidMount = () => {
-    this.setState({ data: dummyData, mutedData: dummyData });
+    this.setState({ data: dummyData, searchData: dummyData });
   };
 
-  handleSearch = e => {
+  preventDefault = e => {
+    e.preventDefault();
+  };
+
+  handleChange = e => {
     const { name, value } = e.target;
     this.setState({
       [name]: value
     });
   };
 
-  handleSubmit = e => {
+  // returns exact match only
+  // if exact match does not exist, returns full dataset
+  handleSearch = e => {
     e.preventDefault();
-    let input = this.state.searchInput;
-
-    // if exact match, filter matches
-    this.setState({
-      data: this.state.data.filter(data => data.username === input)
-    });
+    const username = this.state.data
+      .filter(data => data.username === this.state.searchInput)
+      .map(array => array.username)
+      .toString();
+    if (this.state.searchInput === '') {
+      this.setState({ searchData: this.state.data });
+    } else if (username === this.state.searchInput) {
+      this.setState({
+        searchData: this.state.data.filter(
+          data => data.username === this.state.searchInput
+        )
+      });
+    } else if (
+      username !== this.state.searchInput ||
+      this.state.searchInput === `' '`
+    ) {
+      this.setState({ searchData: this.state.data });
+    }
   };
 
-  // add condition to display
-
   render() {
+    // conditional rendering HERE
     return (
       <div className="App">
         <NavigationContainer
           handleSearch={this.handleSearch}
-          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          preventDefault={this.preventDefault}
         />
         <div className="main-container">
           <MainContent
-            data={this.state.data}
+            data={this.state.searchData}
             // filtered={filtered}
             handleChange={this.handleChange}
           />

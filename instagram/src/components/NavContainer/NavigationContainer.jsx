@@ -10,7 +10,8 @@ const NavigationContainer = props => {
       <Logo />
       <SearchBar
         handleSearch={props.handleSearch}
-        handleSubmit={props.handleSubmit}
+        handleChange={props.handleChange}
+        preventDefault={props.preventDefault}
       />
       <NavButtons />
     </div>
