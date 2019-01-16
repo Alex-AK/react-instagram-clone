@@ -58,7 +58,7 @@ class CommentContainer extends Component {
     e.preventDefault();
     const newComments = [
       ...this.state.comments,
-      { username: 'test', text: this.state.currentComment }
+      { username: 'coffeelove', text: this.state.currentComment }
     ];
     this.setState({ comments: newComments, currentComment: '' });
   };

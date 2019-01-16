@@ -8,7 +8,10 @@ const NavigationContainer = props => {
   return (
     <div className="navigation-container">
       <Logo />
-      <SearchBar />
+      <SearchBar
+        handleSearch={props.handleSearch}
+        handleSubmit={props.handleSubmit}
+      />
       <NavButtons />
     </div>
   );

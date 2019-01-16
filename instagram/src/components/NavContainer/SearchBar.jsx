@@ -1,10 +1,17 @@
 import React from 'react';
 import './SearchBar.css';
 
-const SearchBar = () => {
+const SearchBar = props => {
   return (
-    <form>
-      <input className="search-bar" type="text" placeholder={'search'} />
+    <form onSubmit={props.handleSubmit}>
+      <input
+        className="search-bar"
+        type="text"
+        placeholder={'search'}
+        value={props.searchInput}
+        onChange={props.handleSearch}
+        name="searchInput"
+      />
     </form>
   );
 };
