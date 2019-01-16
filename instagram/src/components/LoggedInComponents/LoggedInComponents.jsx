@@ -1,7 +1,7 @@
 import React from 'react';
 import NavigationContainer from './NavContainer/NavigationContainer';
 import MainContent from './MainContent/MainContent';
-import SideBar from './MainContent/SideBar';
+// import SideBar from './MainContent/SideBar';
 
 const LoggedInComponents = props => {
   return (

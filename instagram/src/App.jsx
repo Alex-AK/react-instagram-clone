@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import dummyData from './dummy-data';
 import './App.css';
 import LoggedInComponents from './components/LoggedInComponents/LoggedInComponents';
+import authenticate from './components/authenticate/authenticate';
 
 class App extends Component {
   constructor() {
@@ -57,6 +58,7 @@ class App extends Component {
 
   render() {
     // conditional rendering HERE
+    const Authenticated = authenticate();
     return (
       // this needs to hold conditional rendering component ran through HOC
       // pass LoggedInComponent props
@@ -67,6 +69,7 @@ class App extends Component {
           preventDefault={this.preventDefault}
           data={this.state.searchData}
         />
+        <Authenticated />
       </div>
     );
   }
