@@ -4,7 +4,7 @@ import dummyData from './dummy-data';
 
 import authenticate from './components/authenticate/authenticate';
 import LoggedIn from './components/Content/LoggedIn';
-import LoginPage from './components/Login/Login';
+import LoginPage from './components/LoginPage/LoginPage';
 
 class App extends Component {
   constructor() {

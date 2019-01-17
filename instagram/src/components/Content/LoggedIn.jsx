@@ -3,7 +3,7 @@ import styles from 'styled-components';
 
 import Posts from './Posts';
 import Header from './NavContainer/Header';
-import Sidebar from './SideBar';
+// import Sidebar from './SideBar';
 
 const MainContainerStyles = styles.div`
   display: flex;
@@ -22,7 +22,7 @@ const LoggedIn = props => {
       />
       <MainContainerStyles>
         <Posts data={props.data} />
-        <Sidebar />
+        {/* <Sidebar /> */}
       </MainContainerStyles>
     </div>
   );

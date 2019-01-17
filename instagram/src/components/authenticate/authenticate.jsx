@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const authenticate = App => Login =>
+const authenticate = App => LoginPage =>
   class extends Component {
     constructor(props) {
       super(props);
@@ -9,7 +9,8 @@ const authenticate = App => Login =>
         username: '',
         password: '',
         currentUsername: '',
-        currentPassword: ''
+        currentPassword: '',
+        currentName: ''
       };
     }
 
@@ -24,9 +25,10 @@ const authenticate = App => Login =>
       return localStorage.getItem('isLoggedIn') ? (
         <App handleChange={this.handleChange} />
       ) : (
-        <Login
+        <LoginPage
           handleChange={this.handleChange}
           currentUsername={this.state.currentUsername}
+          currentName={this.currentName}
         />
       );
     }
