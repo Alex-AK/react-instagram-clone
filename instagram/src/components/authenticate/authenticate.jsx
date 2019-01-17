@@ -5,34 +5,27 @@ const authenticate = App => Login =>
     constructor(props) {
       super(props);
       this.state = {
-        loggedIn: false,
+        isLoggedIn: false,
         username: '',
         password: ''
       };
     }
 
-    // if local storage, load data from local storage
+    // if local storage, set isLoggedIn to true
     componentDidMount = () => {
-      localStorage.getItem('loggedIn') &&
-        this.setState({
-          loggedIn: JSON.parse(localStorage.getItem('loggedIn'))
-        });
-    };
+      if (localStorage.getItem('isLoggedIn')) {
+        this.setState({ isLoggedIn: true });
+      }
 
-    // save state into local storage
-    componentDidUpdate = () => {
-      localStorage.setItem('loggedIn', JSON.stringify(this.state.loggedIn));
-      localStorage.setItem('username', JSON.stringify(this.state.username));
-      localStorage.setItem('password', JSON.stringify(this.state.password));
-    };
+      // conditional login access
+      // const username = this.state.username;
+      // const password = this.state.password;
 
-    // switch for conditional component
-    handleLogin = () => {
-      this.setState({ loggedIn: true });
+      // if (username !== '' && password !== '') {}
     };
 
     render() {
-      if (this.state.loggedIn) {
+      if (this.state.isLoggedIn) {
         return <App handleLogin={this.handleLogin} />;
       } else {
         return <Login handleLogin={this.handleLogin} />;
