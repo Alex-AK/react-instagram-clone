@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// build HOC for conditional rendering here
-// HOC will accept two parameters ( components ie functions) and accept props
-
 const authenticate = App => Login =>
   class extends Component {
     constructor(props) {
@@ -14,7 +11,7 @@ const authenticate = App => Login =>
       };
     }
 
-    // load data into state
+    // if local storage, load data from local storage
     componentDidMount = () => {
       localStorage.getItem('loggedIn') &&
         this.setState({
@@ -22,12 +19,14 @@ const authenticate = App => Login =>
         });
     };
 
+    // save state into local storage
     componentDidUpdate = () => {
       localStorage.setItem('loggedIn', JSON.stringify(this.state.loggedIn));
       localStorage.setItem('username', JSON.stringify(this.state.username));
       localStorage.setItem('password', JSON.stringify(this.state.password));
     };
 
+    // switch for conditional component
     handleLogin = () => {
       this.setState({ loggedIn: true });
     };
@@ -40,7 +39,5 @@ const authenticate = App => Login =>
       }
     }
   };
-// passing App through and rendering App.
-// To be added: functionality to App
 
 export default authenticate;
