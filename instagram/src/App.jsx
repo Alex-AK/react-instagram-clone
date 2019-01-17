@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+
 import dummyData from './dummy-data';
-import './App.css';
-import Login from './components/Login/Login';
-import LoggedInComponents from './components/LoggedInComponents/LoggedInComponents';
+
 import authenticate from './components/authenticate/authenticate';
+import LoggedIn from './components/Content/LoggedIn';
+import LoginPage from './components/Login/Login';
 
 class App extends Component {
   constructor() {
@@ -32,7 +33,7 @@ class App extends Component {
 
   render() {
     return (
-      <LoggedInComponents
+      <LoggedIn
         handleChange={this.props.handleChange}
         handleSearch={this.handleSearch}
         data={this.state.searchData}
@@ -41,6 +42,4 @@ class App extends Component {
   }
 }
 
-const Authenticate = authenticate(App)(Login);
-
-export default Authenticate;
+export default authenticate(App)(LoginPage);

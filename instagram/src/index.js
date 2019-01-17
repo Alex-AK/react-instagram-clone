@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './reset.css';
 import './index.css';
-import App from './App.jsx';
-import Authenticate from './App'
+import ConditionalView from './App.jsx';
 
-ReactDOM.render( < Authenticate / > , document.getElementById('root'));
+ReactDOM.render( < ConditionalView / > , document.getElementById('root'));

@@ -1,11 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './PostContainer.css';
+import styles from 'styled-components';
+
+import CommentContainer from './CommentSection/CommentContainer';
 import PostHeader from './PostHeader';
 import PostImage from './PostImage';
-import CommentContainer from './CommentSection/CommentContainer';
 
-const PostContainer = props => {
+const PostContainerStyles = styles.div`
+  border: 1px solid lightgrey;
+  margin-bottom: 50px;
+  width: 600px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .15)
+`;
+
+const Post = props => {
   const {
     username,
     thumbnailUrl,
@@ -16,29 +26,29 @@ const PostContainer = props => {
   } = props.data;
 
   return (
-    <div className="post-container">
+    <PostContainerStyles>
       <PostHeader username={username} thumbnail={thumbnailUrl} />
       <PostImage image={imageUrl} />
       <CommentContainer
-        // converting this to a class component, which will receive it's own state
+        // converted this to a class component, manages it's own state
         likes={likes}
         timestamp={timestamp}
         comments={comments}
         username={username}
       />
-    </div>
+    </PostContainerStyles>
   );
 };
 
-PostContainer.propTypes = {
+Post.propTypes = {
   data: PropTypes.shape({
     username: PropTypes.string,
     thumbnailUrl: PropTypes.string,
     imageUrl: PropTypes.string,
     likes: PropTypes.number,
     comments: PropTypes.array,
-    timestanp: PropTypes.string
+    timestamp: PropTypes.string
   })
 };
 
-export default PostContainer;
+export default Post;
