@@ -15,7 +15,12 @@ const authenticate = App => Login =>
     }
 
     // load data into state
-    componentDidMount = () => {};
+    componentDidMount = () => {
+      localStorage.getItem('loggedIn') &&
+        this.setState({
+          loggedIn: JSON.parse(localStorage.getItem('loggedIn'))
+        });
+    };
 
     componentDidUpdate = () => {
       localStorage.setItem('loggedIn', JSON.stringify(this.state.loggedIn));
