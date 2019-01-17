@@ -56,9 +56,14 @@ class CommentContainer extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
+    let loggedInUser = JSON.parse(localStorage.getItem('username'));
     const newComments = [
       ...this.state.comments,
-      { username: 'coffeelove', text: this.state.currentComment }
+      {
+        username: loggedInUser,
+        text: this.state.currentComment
+      }
     ];
     this.setState({ comments: newComments, currentComment: '' });
   };

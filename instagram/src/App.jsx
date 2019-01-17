@@ -25,13 +25,6 @@ class App extends Component {
     e.preventDefault();
   };
 
-  handleChange = e => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
   // returns exact match only
   // if exact match does not exist, returns full dataset
   // alternate approach with this guide - https://dev.to/iam_timsmith/lets-build-a-search-bar-in-react-120j
@@ -59,14 +52,10 @@ class App extends Component {
   };
 
   render() {
-    // conditional rendering HERE
-
     return (
-      // this needs to hold conditional rendering component ran through HOC
-      // pass LoggedInComponent props
       <div className="App">
         <LoggedInComponents
-          handleChange={this.handleChange}
+          handleChange={this.props.handleChange}
           handleSearch={this.handleSearch}
           preventDefault={this.preventDefault}
           data={this.state.searchData}
