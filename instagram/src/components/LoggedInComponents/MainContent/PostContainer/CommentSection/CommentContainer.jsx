@@ -16,8 +16,8 @@ class CommentContainer extends Component {
     this.state = {
       comments: [],
       likes: 0,
-      likeActive: false,
       timestamp: '',
+      likeActive: false,
       name: 'currentComment',
       currentComment: ''
     };

@@ -6,28 +6,12 @@ const authenticate = App => Login =>
       super(props);
       this.state = {
         isLoggedIn: false,
-        username: 'TEST USER',
+        username: '',
         password: '',
         currentUsername: '',
-        currentPassword: '',
-        name: 'currentPassword'
+        currentPassword: ''
       };
     }
-
-    // if local storage, set isLoggedIn to true
-    // componentDidMount = () => {
-    //   let storedUsername = localStorage.getItem('username');
-
-    //   if (storedUsername) {
-    //     this.setState({ isLoggedIn: true });
-    //   }
-    // };
-
-    // componentDidMount = () => {
-    //   this.setState({
-    //     isLoggedIn: localStorage.getItem('isLoggedIn')
-    //   });
-    // };
 
     handleChange = e => {
       const { name, value } = e.target;
@@ -37,18 +21,14 @@ const authenticate = App => Login =>
     };
 
     render() {
-      let userLoggedIn = localStorage.getItem('isLoggedIn');
-
-      if (userLoggedIn) {
-        return <App handleChange={this.handleChange} />;
-      } else {
-        return (
-          <Login
-            handleChange={this.handleChange}
-            currentUsername={this.state.currentUsername}
-          />
-        );
-      }
+      return localStorage.getItem('isLoggedIn') ? (
+        <App handleChange={this.handleChange} />
+      ) : (
+        <Login
+          handleChange={this.handleChange}
+          currentUsername={this.state.currentUsername}
+        />
+      );
     }
   };
 

@@ -9,7 +9,6 @@ const MainContent = props => {
   const post = props.data.map(item => {
     return <PostContainer data={item} key={item.username} />;
   });
-  // console.log(props.data[1].username);
   return <div>{post}</div>;
 };
 

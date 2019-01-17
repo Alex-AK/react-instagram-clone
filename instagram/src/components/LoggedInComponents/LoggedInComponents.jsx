@@ -12,11 +12,7 @@ const LoggedInComponents = props => {
         preventDefault={props.preventDefault}
       />
       <div className="main-container">
-        <MainContent
-          data={props.data}
-          // filtered={filtered}
-          handleChange={props.handleChange}
-        />
+        <MainContent data={props.data} />
         {/* <SideBar /> */}
       </div>
     </div>
