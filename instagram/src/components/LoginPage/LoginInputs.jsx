@@ -83,6 +83,10 @@ const LoginInputStyles = styles.input`
   padding: 10px 0 10px 7px;
   width: 270px;
   background: #FAFAFA;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const LoginButton = styles.button`

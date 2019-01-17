@@ -6,11 +6,9 @@ const authenticate = App => LoginPage =>
       super(props);
       this.state = {
         isLoggedIn: false,
-        username: '',
-        password: '',
+        currentName: '',
         currentUsername: '',
-        currentPassword: '',
-        currentName: ''
+        currentPassword: ''
       };
     }
 
@@ -22,13 +20,12 @@ const authenticate = App => LoginPage =>
     };
 
     render() {
-      return localStorage.getItem('isLoggedIn') ? (
+      return localStorage.getItem('username') ? (
         <App handleChange={this.handleChange} />
       ) : (
         <LoginPage
           handleChange={this.handleChange}
           currentUsername={this.state.currentUsername}
-          currentName={this.currentName}
         />
       );
     }
