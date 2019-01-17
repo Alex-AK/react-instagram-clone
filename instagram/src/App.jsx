@@ -21,46 +21,22 @@ class App extends Component {
     this.setState({ data: dummyData, searchData: dummyData });
   };
 
-  preventDefault = e => {
-    e.preventDefault();
-  };
-
-  // returns exact match only
-  // if exact match does not exist, returns full dataset
-  // alternate approach with this guide - https://dev.to/iam_timsmith/lets-build-a-search-bar-in-react-120j
-
+  // search feature written by https://github.com/KieranVieira
   handleSearch = e => {
-    e.preventDefault();
-    const input = this.state.searchInput;
-    const originalData = this.state.data;
-    const username = originalData
-      .filter(data => data.username === input)
-      .map(array => array.username)
-      .toString();
-
-    // set state based on input
-    // this component always renders searchData
-    if (input === '') {
-      this.setState({ searchData: originalData });
-    } else if (username === input) {
-      this.setState({
-        searchData: originalData.filter(data => data.username === input)
-      });
-    } else if (username !== input || input === `''`) {
-      this.setState({ searchData: originalData });
-    }
+    this.setState({
+      searchData: this.state.data.filter(post => {
+        return post.username.includes(e.target.value);
+      })
+    });
   };
 
   render() {
     return (
-      <div className="App">
-        <LoggedInComponents
-          handleChange={this.props.handleChange}
-          handleSearch={this.handleSearch}
-          preventDefault={this.preventDefault}
-          data={this.state.searchData}
-        />
-      </div>
+      <LoggedInComponents
+        handleChange={this.props.handleChange}
+        handleSearch={this.handleSearch}
+        data={this.state.searchData}
+      />
     );
   }
 }
