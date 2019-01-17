@@ -3,7 +3,6 @@ import dummyData from './dummy-data';
 import './App.css';
 import Login from './components/Login/Login';
 import LoggedInComponents from './components/LoggedInComponents/LoggedInComponents';
-
 import authenticate from './components/authenticate/authenticate';
 
 class App extends Component {

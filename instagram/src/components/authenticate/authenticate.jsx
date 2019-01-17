@@ -8,9 +8,20 @@ const authenticate = App => Login =>
     constructor(props) {
       super(props);
       this.state = {
-        loggedIn: false
+        loggedIn: false,
+        username: '',
+        password: ''
       };
     }
+
+    // load data into state
+    componentDidMount = () => {};
+
+    componentDidUpdate = () => {
+      localStorage.setItem('loggedIn', JSON.stringify(this.state.loggedIn));
+      localStorage.setItem('username', JSON.stringify(this.state.username));
+      localStorage.setItem('password', JSON.stringify(this.state.password));
+    };
 
     handleLogin = () => {
       this.setState({ loggedIn: true });
@@ -24,7 +35,6 @@ const authenticate = App => Login =>
       }
     }
   };
-
 // passing App through and rendering App.
 // To be added: functionality to App
 
