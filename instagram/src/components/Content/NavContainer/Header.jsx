@@ -15,7 +15,7 @@ const NavigationWrapper = styles.div`
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 `;
 
-const NavigationContainer = props => {
+const Header = props => {
   return (
     <NavigationWrapper>
       <Logo />
@@ -29,4 +29,4 @@ const NavigationContainer = props => {
   );
 };
 
-export default NavigationContainer;
+export default Header;

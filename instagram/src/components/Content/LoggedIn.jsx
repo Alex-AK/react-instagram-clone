@@ -2,7 +2,7 @@ import React from 'react';
 import styles from 'styled-components';
 
 import Posts from './Posts';
-import NavigationContainer from './NavContainer/NavigationContainer';
+import Header from './NavContainer/Header';
 import Sidebar from './SideBar';
 
 const MainContainerStyles = styles.div`
@@ -15,7 +15,7 @@ const MainContainerStyles = styles.div`
 const LoggedIn = props => {
   return (
     <div>
-      <NavigationContainer
+      <Header
         handleSearch={props.handleSearch}
         handleChange={props.handleChange}
         preventDefault={props.preventDefault}
