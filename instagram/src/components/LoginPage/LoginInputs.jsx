@@ -38,7 +38,11 @@ const LoginInputs = props => {
         <LoginPageText>
           This Instagram clone is a personal project. No data is collected.
         </LoginPageText>
-        <a href="https://github.com/Alex-AK" target="_blank">
+        <a
+          href="https://github.com/Alex-AK"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <GitHubLink src={githubLogo} />
         </a>
       </LoginMenuStyles>

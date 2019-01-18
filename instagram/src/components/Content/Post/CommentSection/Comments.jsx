@@ -1,14 +1,23 @@
 import React from 'react';
-import './Comments.css';
+import styles from 'styled-components';
 
 const Comments = props => {
   // console.log(props);
   return (
-    <div className="comments">
-      <h4 className="comment-username">{props.username}</h4>
+    <DivComments>
+      <H4Username>{props.username}</H4Username>
       <p className="comment">{props.comment}</p>
-    </div>
+    </DivComments>
   );
 };
 
 export default Comments;
+
+const DivComments = styles.div`
+  display: flex;
+  align-items: center;
+`;
+
+const H4Username = styles.h4`
+  margin: 5px 10px 5px 0;
+`;

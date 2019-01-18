@@ -1,11 +1,11 @@
 import React from 'react';
-import './AddComment.css';
+import styles from 'styled-components';
 
 const AddComment = props => {
   return (
-    <div className="add-comment-container">
+    <DivAddCommentContainer>
       <form onSubmit={props.handleSubmit}>
-        <input
+        <InputAddComment
           className="add-comment"
           placeholder="Add comment..."
           value={props.currentComment}
@@ -13,8 +13,25 @@ const AddComment = props => {
           name="currentComment"
         />
       </form>
-    </div>
+    </DivAddCommentContainer>
   );
 };
 
 export default AddComment;
+
+const DivAddCommentContainer = styles.div`
+  border-top: 1px solid lightgrey;
+  margin-top: 20px;
+  padding-top: 10px;
+`;
+
+const InputAddComment = styles.input`
+  margin-top: 10px;
+  border: none;
+  color: grey;
+  font-size: 14px;
+
+  &:focus {
+    outline: none;
+  }
+`;

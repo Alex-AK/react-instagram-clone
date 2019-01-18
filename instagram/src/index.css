@@ -25,3 +25,13 @@ h4 {
 p {
   font-size: 14px;
 }
+
+.fa-heart {
+  margin-right: 10px;
+  /* add background image */
+}
+
+.active {
+  background: red;
+  /* toggle new background image on active */
+}

@@ -1,20 +1,30 @@
 import React from 'react';
-import './MetricsDisplay.css';
+import styles from 'styled-components';
 
 const MetricsDisplay = props => {
   return (
-    <div className="metrics-display">
-      <div className="metrics-buttons">
+    <DivMetrics>
+      <DivButtons>
         <i
           className={`far fa-heart ${props.likeActive ? 'active' : null}`}
           onClick={props.likeActive ? props.decrement : props.increment}
         />
         <p>comment</p>
-      </div>
+      </DivButtons>
 
       <p>{props.likes} likes</p>
-    </div>
+    </DivMetrics>
   );
 };
 
 export default MetricsDisplay;
+
+const DivMetrics = styles.div`
+  margin-bottom: 15px;
+  font-weight: 700;
+`;
+
+const DivButtons = styles.div`
+  display: flex;
+  margin-bottom: 10px;
+`;

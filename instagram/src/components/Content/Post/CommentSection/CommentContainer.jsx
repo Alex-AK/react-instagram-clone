@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from 'styled-components';
 
-import './CommentContainer.css';
+import AddComment from './AddComment';
 import Comments from './Comments';
 import MetricsDisplay from './MetricsDisplay';
-import AddComment from './AddComment';
 
 // convert this to a class, store comments in state
 // add methods to handleChange (ie add text in value to state)
@@ -76,7 +76,7 @@ class CommentContainer extends Component {
     });
 
     return (
-      <div className="comment-container">
+      <DivCommentContainer>
         <MetricsDisplay
           likes={this.state.likes}
           increment={this.incrementLike}
@@ -89,26 +89,10 @@ class CommentContainer extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
-      </div>
+      </DivCommentContainer>
     );
   }
 }
-
-// const CommentContainer = props => {
-//   const createCommentComponents = props.comments.map((item, index) => {
-//     return (
-//       <Comments username={item.username} key={index} comment={item.text} />
-//     );
-//   });
-
-//   return (
-//     <div className="comment-container">
-//       <MetricsDisplay likes={props.likes} />
-//       {createCommentComponents}
-//       <AddComment />
-//     </div>
-//   );
-// };
 
 CommentContainer.propTypes = {
   likes: PropTypes.number,
@@ -117,3 +101,7 @@ CommentContainer.propTypes = {
 };
 
 export default CommentContainer;
+
+const DivCommentContainer = styles.div`
+  padding: 20px;
+`;
