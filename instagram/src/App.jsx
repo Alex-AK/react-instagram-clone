@@ -22,6 +22,8 @@ class App extends Component {
     this.setState({ data: dummyData, searchData: dummyData });
   };
 
+  //
+
   // search feature written by https://github.com/KieranVieira
   handleSearch = e => {
     this.setState({

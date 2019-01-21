@@ -5,6 +5,9 @@ import SearchBar from './SearchBar';
 import NavButtons from './NavButtons';
 
 const NavigationWrapper = styles.div`
+  position: fixed;
+  top: 0;
+  z-index: 1;
   border-bottom: 1px solid #E2E1E2;
   background: white;
   padding: 20px 0;

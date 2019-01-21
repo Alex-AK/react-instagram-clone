@@ -6,29 +6,47 @@ import AddComment from './AddComment';
 import Comments from './Comments';
 import MetricsDisplay from './MetricsDisplay';
 
-// convert this to a class, store comments in state
-// add methods to handleChange (ie add text in value to state)
-// add method to handle submit (ie add value (comment) and logged in username to array of comments)
-
 class CommentContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: [],
-      likes: 0,
-      timestamp: '',
+      comments: this.props.comments,
+      likes: this.props.likes,
+      timestamp: this.props.timestamp,
       likeActive: false,
       name: 'currentComment',
-      currentComment: ''
+      currentComment: '',
+      imageUrl: this.props.imageUrl
     };
   }
 
   componentDidMount() {
+    const storedComments = JSON.parse(
+      localStorage.getItem(this.state.imageUrl)
+    );
+    const storedLikes = JSON.parse(
+      localStorage.getItem(`likes ${this.state.imageUrl}`)
+    );
+    const storedActive = JSON.parse(
+      localStorage.getItem(`active ${this.state.imageUrl}`)
+    );
     this.setState({
-      comments: this.props.comments,
-      likes: this.props.likes,
-      timestamp: this.props.timestamp
+      comments: storedComments,
+      likes: storedLikes,
+      likeActive: storedActive
     });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem(
+      this.state.imageUrl,
+      JSON.stringify(this.state.comments)
+    );
+    localStorage.setItem(`likes ${this.state.imageUrl}`, this.state.likes);
+    localStorage.setItem(
+      `active ${this.state.imageUrl}`,
+      this.state.likeActive
+    );
   }
 
   incrementLike = () => {
@@ -56,7 +74,6 @@ class CommentContainer extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
     let loggedInUser = JSON.parse(localStorage.getItem('username'));
     const newComments = [
       ...this.state.comments,
@@ -65,10 +82,30 @@ class CommentContainer extends Component {
         text: this.state.currentComment
       }
     ];
-    this.setState({ comments: newComments, currentComment: '' });
+
+    this.setState({
+      comments: newComments,
+      currentComment: ''
+    });
+
+    localStorage.setItem(
+      this.state.imageUrl,
+      JSON.stringify(this.state.comments)
+    );
   };
 
   render() {
+    if (!localStorage.getItem(this.state.imageUrl)) {
+      localStorage.setItem(
+        this.state.imageUrl,
+        JSON.stringify(this.state.comments)
+      );
+      localStorage.setItem(`likes ${this.state.imageUrl}`, this.state.likes);
+      localStorage.setItem(
+        `active ${this.state.imageUrl}`,
+        this.state.likeActive
+      );
+    }
     const createCommentComponents = this.state.comments.map((item, index) => {
       return (
         <Comments username={item.username} comment={item.text} key={index} />
@@ -84,6 +121,7 @@ class CommentContainer extends Component {
           likeActive={this.state.likeActive}
         />
         {createCommentComponents}
+        <Timestamp>{this.state.timestamp}</Timestamp>
         <AddComment
           currentComment={this.state.currentComment}
           handleSubmit={this.handleSubmit}
@@ -104,4 +142,10 @@ export default CommentContainer;
 
 const DivCommentContainer = styles.div`
   padding: 20px;
+`;
+
+const Timestamp = styles.p`
+  padding-top: 10px;
+  color: lightgrey;
+  font-size: 12px;
 `;

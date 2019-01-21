@@ -9,7 +9,7 @@ const MetricsDisplay = props => {
           className={`far fa-heart ${props.likeActive ? 'active' : null}`}
           onClick={props.likeActive ? props.decrement : props.increment}
         />
-        <p>comment</p>
+        <i className="far fa-comment" />
       </DivButtons>
 
       <p>{props.likes} likes</p>

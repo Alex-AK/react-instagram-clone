@@ -35,6 +35,7 @@ const Post = props => {
         timestamp={timestamp}
         comments={comments}
         username={username}
+        imageUrl={imageUrl}
       />
     </PostContainerStyles>
   );

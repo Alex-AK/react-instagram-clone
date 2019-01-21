@@ -3,13 +3,15 @@ import styles from 'styled-components';
 
 import Posts from './Posts';
 import Header from './NavContainer/Header';
-// import Sidebar from './SideBar';
+import Sidebar from './SideBar';
 
 const MainContainerStyles = styles.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 5%;
+  width: 1000px;
+  margin: 10% auto;
+  position: relative;
 `;
 
 const LoggedIn = props => {
@@ -22,7 +24,7 @@ const LoggedIn = props => {
       />
       <MainContainerStyles>
         <Posts data={props.data} />
-        {/* <Sidebar /> */}
+        <Sidebar />
       </MainContainerStyles>
     </div>
   );
