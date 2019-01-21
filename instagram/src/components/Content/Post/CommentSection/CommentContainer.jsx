@@ -6,47 +6,32 @@ import AddComment from './AddComment';
 import Comments from './Comments';
 import MetricsDisplay from './MetricsDisplay';
 
-// convert this to a class, store comments in state
-// add methods to handleChange (ie add text in value to state)
-// add method to handle submit (ie add value (comment) and logged in username to array of comments)
-
 class CommentContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: [],
-      likes: 0,
-      timestamp: '',
+      comments: this.props.comments,
+      likes: this.props.likes,
+      timestamp: this.props.timestamp,
       likeActive: false,
       name: 'currentComment',
       currentComment: '',
-      imageUrl: ''
+      imageUrl: this.props.imageUrl
     };
   }
 
-  // if local storage, set state of components
   componentDidMount() {
-    // let test = JSON.parse(localStorage.getItem(this.state.imageUrl));
-    // let holder = this.state.comments.includes(test);
-    if (localStorage.key(this.state.imageUrl)) {
-      console.log(localStorage.getItem(this.state.imageUrl));
-    }
-
-    this.setState({
-      comments: this.props.comments,
-      timestamp: this.props.timestamp,
-      likes: this.props.likes,
-      imageUrl: this.props.imageUrl
-    });
+    const storedData = JSON.parse(localStorage.getItem(this.state.imageUrl));
+    console.log(storedData);
+    this.setState({ comments: storedData });
   }
 
-  // NEXT TASK : if local storage, set state with local storage
-  componentDidUpdate = () => {
+  componentDidUpdate() {
     localStorage.setItem(
       this.state.imageUrl,
       JSON.stringify(this.state.comments)
     );
-  };
+  }
 
   incrementLike = () => {
     let likes = this.state.likes + 1;
@@ -96,6 +81,12 @@ class CommentContainer extends Component {
   };
 
   render() {
+    if (!localStorage.getItem(this.state.imageUrl)) {
+      localStorage.setItem(
+        this.state.imageUrl,
+        JSON.stringify(this.state.comments)
+      );
+    }
     const createCommentComponents = this.state.comments.map((item, index) => {
       return (
         <Comments username={item.username} comment={item.text} key={index} />
