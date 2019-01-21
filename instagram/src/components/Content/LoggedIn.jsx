@@ -10,7 +10,7 @@ const MainContainerStyles = styles.div`
   flex-wrap: wrap;
   justify-content: space-around;
   width: 1000px;
-  margin: 10% auto;
+  margin: 110px auto;
   position: relative;
 `;
 

@@ -39,7 +39,7 @@ const LoginInputs = props => {
           This Instagram clone is a personal project. No data is collected.
         </LoginPageText>
         <a
-          href="https://github.com/Alex-AK"
+          href="https://github.com/alex-ak/react-instagram-clone"
           target="_blank"
           rel="noopener noreferrer"
         >
