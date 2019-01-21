@@ -19,17 +19,34 @@ class CommentContainer extends Component {
       timestamp: '',
       likeActive: false,
       name: 'currentComment',
-      currentComment: ''
+      currentComment: '',
+      imageUrl: ''
     };
   }
 
+  // if local storage, set state of components
   componentDidMount() {
+    // let test = JSON.parse(localStorage.getItem(this.state.imageUrl));
+    // let holder = this.state.comments.includes(test);
+    if (localStorage.key(this.state.imageUrl)) {
+      console.log(localStorage.getItem(this.state.imageUrl));
+    }
+
     this.setState({
       comments: this.props.comments,
+      timestamp: this.props.timestamp,
       likes: this.props.likes,
-      timestamp: this.props.timestamp
+      imageUrl: this.props.imageUrl
     });
   }
+
+  // NEXT TASK : if local storage, set state with local storage
+  componentDidUpdate = () => {
+    localStorage.setItem(
+      this.state.imageUrl,
+      JSON.stringify(this.state.comments)
+    );
+  };
 
   incrementLike = () => {
     let likes = this.state.likes + 1;
@@ -58,6 +75,7 @@ class CommentContainer extends Component {
     e.preventDefault();
 
     let loggedInUser = JSON.parse(localStorage.getItem('username'));
+
     const newComments = [
       ...this.state.comments,
       {
@@ -65,7 +83,16 @@ class CommentContainer extends Component {
         text: this.state.currentComment
       }
     ];
-    this.setState({ comments: newComments, currentComment: '' });
+
+    this.setState({
+      comments: newComments,
+      currentComment: ''
+    });
+
+    localStorage.setItem(
+      this.state.imageUrl,
+      JSON.stringify(this.state.comments)
+    );
   };
 
   render() {

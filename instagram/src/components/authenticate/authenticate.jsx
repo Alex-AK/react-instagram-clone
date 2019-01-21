@@ -5,7 +5,6 @@ const authenticate = App => LoginPage =>
     constructor(props) {
       super(props);
       this.state = {
-        isLoggedIn: false,
         currentName: '',
         currentUsername: '',
         currentPassword: ''
