@@ -11,16 +11,15 @@ const dummyData = [
     comments: [
       {
         username: 'philzcoffee',
-        text:
-          "We've got more than just delicious coffees to offer at our shops!"
+        text: "Let's get coffee"
       },
       {
         username: 'biancasaurus',
-        text: 'Looks delicious!'
+        text: 'WOOOOOOOO'
       },
       {
         username: 'martinseludo',
-        text: "Can't wait to try it!"
+        text: "Can't wait to meet them."
       }
     ]
   },

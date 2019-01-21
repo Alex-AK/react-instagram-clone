@@ -14,10 +14,10 @@ const InnerContent = styles.div`
 `;
 
 const Box = styles.div`
-  height: 250px;
+  height: 240px;
   border: 1px solid #D3D3D3;
   border-radius: 3px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, .15);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .05);
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
