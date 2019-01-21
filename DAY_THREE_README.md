@@ -17,7 +17,7 @@
 
 #### Tasks (Day III)
 
-- Create a `<PostsPage />` component in your `components/PostsContainer` directory.
+- Create a `<PostsPage />` (mine is: `LoggedInComponents`) component in your `components/PostsContainer` directory.
 
   - You'll have to move a lot of what is rendered in `app.js` to this new component
   - In app.js, render the `PostsPage` component.
@@ -27,7 +27,7 @@
 - Building the High Order Component
 
   - Create a directory called `authentication`
-  - Inside that directory create a HOC called `authenticate`. This is where all of the magic sis going to happen.
+  - Inside that directory create a HOC called `authenticate`. This is where all of the magic is going to happen.
   - This component should be able to take in a component as an argument, and it will return a `class` component.
   - Inside of `authenticate's` render method, you'll want to return the Component that gets passed into it.
   - Be sure to export out this component.
