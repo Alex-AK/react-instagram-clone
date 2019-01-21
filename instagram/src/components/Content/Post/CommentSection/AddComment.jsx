@@ -6,7 +6,7 @@ const AddComment = props => {
     <DivAddCommentContainer>
       <form onSubmit={props.handleSubmit}>
         <InputAddComment
-          className="add-comment"
+          className="add-comment focus"
           placeholder="Add comment..."
           value={props.currentComment}
           onChange={props.handleChange}

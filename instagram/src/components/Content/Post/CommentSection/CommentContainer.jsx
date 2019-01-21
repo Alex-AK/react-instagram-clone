@@ -74,9 +74,7 @@ class CommentContainer extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
     let loggedInUser = JSON.parse(localStorage.getItem('username'));
-
     const newComments = [
       ...this.state.comments,
       {
@@ -123,6 +121,7 @@ class CommentContainer extends Component {
           likeActive={this.state.likeActive}
         />
         {createCommentComponents}
+        <Timestamp>{this.state.timestamp}</Timestamp>
         <AddComment
           currentComment={this.state.currentComment}
           handleSubmit={this.handleSubmit}
@@ -143,4 +142,10 @@ export default CommentContainer;
 
 const DivCommentContainer = styles.div`
   padding: 20px;
+`;
+
+const Timestamp = styles.p`
+  padding-top: 10px;
+  color: lightgrey;
+  font-size: 12px;
 `;

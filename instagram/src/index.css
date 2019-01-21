@@ -26,12 +26,14 @@ p {
   font-size: 14px;
 }
 
+.far {
+  color: #848484;
+}
+
 .fa-heart {
   margin-right: 10px;
-  /* add background image */
 }
 
 .active {
   color: red;
-  /* toggle new background image on active */
 }
