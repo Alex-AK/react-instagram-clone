@@ -25,37 +25,6 @@ const dummyData = [
     ]
   },
   {
-    username: 'fortnite',
-    thumbnailUrl:
-      'https://tk-assets.lambdaschool.com/ce601fdf-7cb0-4098-83d3-1a1584a72513_30841289_342445456281079_112845064497004544_n.jpg',
-    imageUrl:
-      'https://tk-assets.lambdaschool.com/89d13918-b7a2-4b40-9658-f376ea3f6b59_37131538_213683546146400_1083714364399157248_n.jpg',
-    likes: 4307,
-    timestamp: 'July 15th 2017, 03:12:09 pm',
-    comments: [
-      {
-        username: 'twitch',
-        text: 'Epic Street Fighter action here in Las Vegas at #EVO2017!'
-      },
-      {
-        username: 'michaelmarzetta',
-        text: 'Omg that match was crazy'
-      },
-      {
-        username: 'themexican_leprechaun',
-        text: 'What a setup'
-      },
-      {
-        username: 'dennis_futbol',
-        text: 'It that injustice'
-      },
-      {
-        username: 'dennis_futbol',
-        text: 'Is'
-      }
-    ]
-  },
-  {
     username: 'playhearthstone',
     thumbnailUrl:
       'https://tk-assets.lambdaschool.com/c432f179-8bd7-4758-959d-d88a21f96bca_37105899_432228420518610_5035444036064772096_n.jpg',
@@ -75,6 +44,76 @@ const dummyData = [
       {
         username: 'awesomebt28',
         text: 'I like how Half Dome looks so old and useless'
+      }
+    ]
+  },
+
+  {
+    username: 'moonman',
+    thumbnailUrl:
+      'https://images.unsplash.com/photo-1548049717-249a5f7e9189?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+    imageUrl:
+      'https://images.unsplash.com/photo-1548049717-249a5f7e9189?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
+    likes: 44307,
+    timestamp: 'July 15th 2017, 03:12:09 pm',
+    comments: [
+      {
+        username: 'playhearthstone',
+        text: 'Epic!'
+      },
+      {
+        username: 'michaelmarzetta',
+        text: 'Omg that was crazy'
+      },
+      {
+        username: 'themexican_leprechaun',
+        text: 'What a setup'
+      }
+    ]
+  },
+  {
+    username: 'coffeeman',
+    thumbnailUrl:
+      'https://previews.123rf.com/images/blankstock/blankstock1606/blankstock160602609/58560841-coffee-glass-sign-icon-hot-coffee-button-flat-coffee-icon-simple-design-coffee-symbol-coffee-graphic.jpg',
+    imageUrl:
+      'https://images.unsplash.com/photo-1484157239365-80e635261db7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    likes: 12437,
+    timestamp: 'July 15th 2017, 03:12:09 pm',
+    comments: [
+      {
+        username: 'tomtom',
+        text: 'Epic Street Fighter action here in Las Vegas at #EVO2017!'
+      },
+      {
+        username: 'michaelmarzetta',
+        text: 'YUM'
+      }
+    ]
+  },
+  {
+    username: 'fortnite',
+    thumbnailUrl:
+      'https://tk-assets.lambdaschool.com/ce601fdf-7cb0-4098-83d3-1a1584a72513_30841289_342445456281079_112845064497004544_n.jpg',
+    imageUrl:
+      'https://tk-assets.lambdaschool.com/89d13918-b7a2-4b40-9658-f376ea3f6b59_37131538_213683546146400_1083714364399157248_n.jpg',
+    likes: 4307,
+    timestamp: 'July 15th 2017, 03:12:09 pm',
+    comments: [
+      {
+        username: 'twitch',
+        text: 'Epic action here in Las Vegas at #EVO2017!'
+      },
+      {
+        username: 'michaelmarzetta',
+        text: 'Omg that match was crazy'
+      },
+      {
+        username: 'themexican_leprechaun',
+        text: 'What a setup'
+      },
+      {
+        username: 'dennis_futbol',
+        text: 'It that injustice'
       }
     ]
   }
