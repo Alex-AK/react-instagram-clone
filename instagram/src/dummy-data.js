@@ -5,7 +5,7 @@ const dummyData = [
       'https://tk-assets.lambdaschool.com/ecd33d34-c124-4b75-92d2-e5c52c171ed8_11201517_887808411287357_1307163552_a.jpg',
 
     imageUrl:
-      'https://tk-assets.lambdaschool.com/69cf901b-f96d-466e-a745-ff2a01effac9_philz-image.jpg',
+      'https://images.unsplash.com/photo-1547999787-7d31fc119282?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
     likes: 400,
     timestamp: 'July 17th 2017, 12:42:40 pm',
     comments: [
@@ -91,29 +91,25 @@ const dummyData = [
     ]
   },
   {
-    username: 'fortnite',
+    username: 'Tomtom',
     thumbnailUrl:
       'https://tk-assets.lambdaschool.com/ce601fdf-7cb0-4098-83d3-1a1584a72513_30841289_342445456281079_112845064497004544_n.jpg',
     imageUrl:
-      'https://tk-assets.lambdaschool.com/89d13918-b7a2-4b40-9658-f376ea3f6b59_37131538_213683546146400_1083714364399157248_n.jpg',
+      'https://images.unsplash.com/photo-1548021682-1720ed403a5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60',
     likes: 4307,
     timestamp: 'July 15th 2017, 03:12:09 pm',
     comments: [
       {
         username: 'twitch',
-        text: 'Epic action here in Las Vegas at #EVO2017!'
-      },
-      {
-        username: 'michaelmarzetta',
-        text: 'Omg that match was crazy'
+        text: '!!!!!!!'
       },
       {
         username: 'themexican_leprechaun',
-        text: 'What a setup'
+        text: 'Where is this??'
       },
       {
         username: 'dennis_futbol',
-        text: 'It that injustice'
+        text: 'Dreamy'
       }
     ]
   }
