@@ -32,6 +32,6 @@ p {
 }
 
 .active {
-  background: red;
+  color: red;
   /* toggle new background image on active */
 }

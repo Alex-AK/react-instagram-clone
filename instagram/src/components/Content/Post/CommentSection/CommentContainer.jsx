@@ -21,15 +21,31 @@ class CommentContainer extends Component {
   }
 
   componentDidMount() {
-    const storedData = JSON.parse(localStorage.getItem(this.state.imageUrl));
-    console.log(storedData);
-    this.setState({ comments: storedData });
+    const storedComments = JSON.parse(
+      localStorage.getItem(this.state.imageUrl)
+    );
+    const storedLikes = JSON.parse(
+      localStorage.getItem(`likes ${this.state.imageUrl}`)
+    );
+    const storedActive = JSON.parse(
+      localStorage.getItem(`active ${this.state.imageUrl}`)
+    );
+    this.setState({
+      comments: storedComments,
+      likes: storedLikes,
+      likeActive: storedActive
+    });
   }
 
   componentDidUpdate() {
     localStorage.setItem(
       this.state.imageUrl,
       JSON.stringify(this.state.comments)
+    );
+    localStorage.setItem(`likes ${this.state.imageUrl}`, this.state.likes);
+    localStorage.setItem(
+      `active ${this.state.imageUrl}`,
+      this.state.likeActive
     );
   }
 
@@ -85,6 +101,11 @@ class CommentContainer extends Component {
       localStorage.setItem(
         this.state.imageUrl,
         JSON.stringify(this.state.comments)
+      );
+      localStorage.setItem(`likes ${this.state.imageUrl}`, this.state.likes);
+      localStorage.setItem(
+        `active ${this.state.imageUrl}`,
+        this.state.likeActive
       );
     }
     const createCommentComponents = this.state.comments.map((item, index) => {
